@@ -3,7 +3,7 @@
 
 __author__ = 'Nacho-w7'
 
-from Empleados import Empleado
+#from Empleados import Empleado
 class Departamento():
     def __init__(self,nombre_depto,id_depto):
         self.__nombre_depto=nombre_depto
@@ -12,6 +12,11 @@ class Departamento():
     def anyadir_emplado(self,empleado):
         self.__empleado.append(empleado)
     def get_salario_total(self):
-        return float(sum([i.get_salario() for i in self.__empleado]))
+        return round(float(sum([i.get_salario() for i in self.__empleado])),2)
+    def get_salario_total_mensual(self):
+        return round(float(sum([i.get_salario_menusal() for i in self.__empleado])),2)
+    def get_nombre_depto(self):
+        return self.__nombre_depto
     def __str__(self):
-        return 'Salario total ' + str(self.get_salario_total())
+        return 'Salario total ' + str(self.get_salario_total()) + 'Salario total mensual' + str(self.get_salario_total_mensual())
+    property(get_nombre_depto)
