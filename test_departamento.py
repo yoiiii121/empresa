@@ -13,7 +13,19 @@ from mockito import *
 
 
 class TestDepartamento(TestCase):
+    """
+
+    Comprueba que los métodos complicados de Departamento funcionan
+
+    """
     def test_get_salario_total(self):
+        """
+
+        :arg: Test que comprueba los valores y el tipo que devuelve el saldo anual de todos los empleados de un departamento
+        :mock: Instanciación de un objeto de una clase solo centrandose en algunos atributos
+        :return: Devuelve el resultado del test
+
+        """
         em1 = mock(Empleado)
         when(em1).get_salario().thenReturn(1000.56)
         em2 = mock(Empleado)
@@ -31,6 +43,13 @@ class TestDepartamento(TestCase):
         self.assertEqual(dep1.get_salario_total(), 2955.35)
 
     def test_get_salario_total_mensual(self):
+        """
+
+        :arg: Test que comprueba los valores y el tipo que devuelve el saldo mensual de todos los empleados de un departamento
+        :mock: Instanciación de un objeto de una clase solo centrandose en algunos atributos
+        :return: Devuelve el resultado del test
+
+        """
         em1 = mock(Empleado)
         when(em1).get_salario_menusal().thenReturn(83.38)
         em2 = mock(Empleado)
